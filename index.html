@@ -13,7 +13,21 @@
 </head>
 <body>
 	<div class="container">
-		<div id="map-canvas"></div>	
+		<div id="map-canvas"></div>
+		<div class="search">
+			<label for="address">location </label>
+		    <input type="text" id="address" value="" placeholder="location">
+		
+		    
+		    <label for="food"> </label>
+		    <input type="text" id="food" value="" placeholder="type of food" >
+		    <button id="address" data-bind="click: $root.submitHandler">Submit</button>
+	    </div>
+		<ul class="scrollList" data-bind="foreach: allLocations" id="list">
+		  	<li><a data-bind="text: name, click: $root.clickHandler"></a></li>
+		  	<li data-bind="text: location.address + ', ' + location.city"></li>		
+	    </ul>
+	</div>
     <script type="text/javascript" src="js/knockout-3.2.0.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
