@@ -1,5 +1,4 @@
-/* Project 5, neighborhood map for Udacidy Frontend Nanodegree
-   Author: Irina Lobova */
+//
 
 var q = {lat: 33.774828, lng: -84.296312, food: 'beer'}; /* initial lat, lng and food type */
 document.addEventListener('DOMContentLoaded', ko.applyBindings(new ViewModel()));
