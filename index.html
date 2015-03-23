@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Beer Circuit</title>
+	<title>Wine Circuit</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- Google Maps API -->
@@ -14,22 +14,35 @@
 <body>
 	<div class="container">
 		<div id="map-canvas"></div>
-		<div class="search">
-			<label for="address">location </label>
-		    <input type="text" id="address" value="" placeholder="location">
-		
-		    
-		    <label for="food"> </label>
-		    <input type="text" id="food" value="" placeholder="type of food" >
-		    <button id="address" data-bind="click: $root.submitHandler">Submit</button>
+		<!--search bar-->
+		<form class="form-inline">
+			<div class="form-group">
+				<label for="address">location </label>
+				<input type="text" class="form-control" id="address" value="" placeholder="neighborhood">
+			</div>
+			<div class ="form-group"> 
+				<label for="food">what you're looking for </label>
+				<input type="text" class="form-control" id="food" value="" placeholder="type">   
+			</div>
+			<div class="form-group" class= "col-med-4">
+				<button id="address"  class="btn btn-default" data-bind="click: $root.submitHandler">Submit
+				</button>
+			</div>
+		</form>
+		<div>
+			<ul class="scrollList" data-bind="foreach: allLocations" id="list">
+			  	<li><a data-bind="text: name, click: $root.clickHandler"></a></li>
+			  	<li data-bind="text: location.address + ', ' + location.city"></li>		
+		    </ul>
 	    </div>
-		<ul class="scrollList" data-bind="foreach: allLocations" id="list">
-		  	<li><a data-bind="text: name, click: $root.clickHandler"></a></li>
-		  	<li data-bind="text: location.address + ', ' + location.city"></li>		
-	    </ul>
 	</div>
     <script type="text/javascript" src="js/knockout-3.2.0.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
+		
+
+
+
+		   

@@ -1,6 +1,6 @@
-//
+//Initial coordenates for Atlanta Decatur
 
-var q = {lat: 33.774828, lng: -84.296312, food: 'beer'}; /* initial lat, lng and food type */
+var q = {lat: 33.774828, lng: -84.296312, food: 'wine'}; 
 document.addEventListener('DOMContentLoaded', ko.applyBindings(new ViewModel()));
 
 function ViewModel() {
@@ -8,7 +8,7 @@ function ViewModel() {
   var markers = [];
   self.allLocations = ko.observableArray([]);
   var map = initializeMap();
-  /*if google map is unavailable alert a user*/
+  //if google map is unavailable alert a user
   if (!map){
     alert("Google Maps unavailable. Please, try later");
     return;     
@@ -21,7 +21,7 @@ function ViewModel() {
   self.submitHandler();
 }
 
-/*initialize map with predefined parameters*/
+//initialize map with predefined parameters
 function initializeMap() {
   geocoder = new google.maps.Geocoder();
   var mapOptions = {
@@ -37,7 +37,7 @@ function initializeGeo(map) {
   var browserSupportFlag;
   var initialLocation;
   
-  /* Geolocation */
+  // Geolocation 
   if(navigator.geolocation) {
     browserSupportFlag = true;
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -50,14 +50,14 @@ function initializeGeo(map) {
       handleNoGeolocation(browserSupportFlag);
     });
   }
-  /* Browser doesn't support Geolocation */
+  // Browser doesn't support Geolocation 
   else {
     browserSupportFlag = false;
     handleNoGeolocation(browserSupportFlag);
   }
 
   return geocoder;
-  /* error handler: if geolocation failes set the map to the default location(cambridge)*/
+  // error handler: if geolocation failes set the map to the default location(Decatur)
   function handleNoGeolocation(errorFlag) {
     if (errorFlag === true) {
       initialLocation = cambridge;
@@ -68,11 +68,11 @@ function initializeGeo(map) {
   }
 } 
 
-/* fetch data from Foursquare and set markers on the map accordingly */
+//fetch data from Foursquare and set markers on the map accordingly 
 function fetchFoursquare(map, allLocations, markers) {
-  allLocations([]); /* removes previous items from the list */
+  allLocations([]); // removes previous items from the list 
   
-  /* Foursquare API request */
+  //ForSquare API request
   var foursquareUrl = 'https://api.foursquare.com/v2/venues/search' +
   '?client_id=NEVWWB4QNWYIBNRSMMAMPSED3BZTNS3CSTSCHD1LLRR01A2U' +
   '&client_secret=DZZOB2RCPHICI3YUWZDVW2BPCY3B5AXJMOLPEDY4WZPAPPAL' +
@@ -81,13 +81,13 @@ function fetchFoursquare(map, allLocations, markers) {
   '&v=20140806' +
   '&m=foursquare';
   
-  var dataArray = []; /* Array of venues' names, longitudes and latitudes */ 
+  var dataArray = []; // Array of venues' names, longitudes and latitudes
 
   $.getJSON(foursquareUrl, function(data) {
-    /* Once we get the JSON data, put data into an observable array */
+    // Once we get the JSON data, put data into an observable array 
     data.response.venues.forEach(function(item) { 
       allLocations.push(item);
-      /* put data to dataArray */
+      // put data to dataArray 
       dataArray.push({lat: item.location.lat, lng: item.location.lng, 
                       name: item.name, loc: item.location.address + " " + item.location.city});
     });
@@ -95,7 +95,7 @@ function fetchFoursquare(map, allLocations, markers) {
   });
 } 
 
-/* Take lng and lat from dataArray and apply them to set markers on the map */
+// Take lng and lat from dataArray and apply them to set markers on the map 
 function setMarkers(dataArray, map, markers) {
   dataArray.forEach(function(element) {   
     var newLatlng = new google.maps.LatLng(element.lat, element.lng);
@@ -116,11 +116,11 @@ function setMarkers(dataArray, map, markers) {
   });
 }
 
-/* Submit handler */
+//Submit handler 
 
-/* Take address (value from the input box), 
-   convert it to new lat and lng and update the map.
-   Then call fetchFoursquare to update markers */
+// Take address (value from the input box), 
+ //  convert it to new lat and lng and update the map.
+   //Then call fetchFoursquare to update markers 
 function updateLocation(map, geocoder, allLocations, markers) {
   var address = document.getElementById('address').value;
   if (address === '') fetchFoursquare(map, allLocations, markers);

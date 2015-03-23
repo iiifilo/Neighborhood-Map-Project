@@ -1,0 +1,94 @@
+body, html {
+	height: 100%; 
+	margin: 0; 
+	padding: 0;
+}
+.form-group {
+	padding: 5px;
+	position: relative;
+	top: 2%;
+	left: 8%;
+	
+}
+.form-inline{
+	float: right;
+	margin-top: 40px;
+}
+input {
+	width: 15%;
+}
+
+#map-canvas {
+	width: 100%; 
+	height: 100%; 
+	margin: 0; 
+	padding: 0;
+	position: absolute;
+	right: 0;
+}
+
+#map-canvas img {
+    max-width : none;
+}
+
+.container {
+	
+	width: 100%
+}
+ul {
+list-style-type: none;
+position: absolute;
+left: 1002px;
+background-color: white;
+border: 1px solid #ccc;
+opacity: 0.8;
+margin-top: 10px;
+font-weight: bolder;
+border-radius: 4px;
+}
+.scrollList {
+	padding: 14px;
+	margin-top: 100px;
+	height: 500px;
+	width: 260px;
+	overflow: auto;
+	
+	
+
+}
+
+/* mobile to tablet portrait styles */
+@media only screen and (max-width: 59.9999em)  {
+	.search {
+		position: absolute;
+		right: 0;
+		left: 0;
+		top: 0;
+	}
+	input {
+		display: block;
+		width: 100%;
+	}
+	button {
+		width: 100%;
+	}
+	#map-canvas {
+		width: 100%; 
+		height: 100%; 
+		margin: 0; 
+		padding: 0;
+		position: absolute;
+		right: 0;
+		
+	}
+	ul {
+		list-style-type: none;
+		position: absolute;
+		width: 90%;
+		top: 70%;
+		left: 0;
+	}
+	.scrollList {
+		height: 28%;
+	}
+}
