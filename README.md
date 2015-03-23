@@ -1,1 +1,0 @@
-# frontend-nanodegree-neighborhood-map
