@@ -24,3 +24,6 @@ W3 schools:   https://w3schools.com
 Stackoverflow: http://stackoverflow.com/
 Udacity Forum
 Udacity Chat
+Udacity Instructors
+Udacity Student 
+
