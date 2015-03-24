@@ -38,7 +38,7 @@ input {
 ul {
 list-style-type: none;
 position: absolute;
-left: 1002px;
+left: 78%;
 background-color: white;
 border: 1px solid #ccc;
 opacity: 0.8;
@@ -61,7 +61,7 @@ border-radius: 4px;
 @media only screen and (max-width: 59.9999em)  {
 	.search {
 		position: absolute;
-		right: 0;
+		right: 10%;
 		left: 0;
 		top: 0;
 	}
@@ -85,10 +85,12 @@ border-radius: 4px;
 		list-style-type: none;
 		position: absolute;
 		width: 90%;
-		top: 70%;
-		left: 0;
+		top: 55%;
+		left: 33%;
+		margin-right: 10%;
 	}
 	.scrollList {
-		height: 28%;
+		height: 22%;
 	}
+	.hide{display: none}
 }

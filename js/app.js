@@ -1,4 +1,4 @@
-//Initial coordenates for Atlanta Decatur
+//Initial coordenates for Atlanta Decatur, GA.
 
 var q = {lat: 33.774828, lng: -84.296312, food: 'wine'}; 
 document.addEventListener('DOMContentLoaded', ko.applyBindings(new ViewModel()));
@@ -110,8 +110,10 @@ function setMarkers(dataArray, map, markers) {
     /* create infowindows for each of the markers */
     var infowindow = new google.maps.InfoWindow();
     google.maps.event.addListener(marker, 'click', function() {
+      
+      infowindow.setContent(this.content); 
       infowindow.open(map, this);
-      infowindow.setContent(this.content);    
+         
     });
   });
 }
@@ -145,10 +147,10 @@ function clearMarkers(markers) {
   markers = [];
 } 
 
-/* clickHandler */
+//clickHandler 
 
-/* When the link in the list is clicked, take lat and lng from the passed data and set the map zoom 
-   according to these parametres */ 
+//When the link in the list is clicked, take lat and lng from the passed data and set the map zoom 
+ //  according to these parametres 
 function moveMap(data, map, markers) {
   map.setCenter(new google.maps.LatLng(data.location.lat, data.location.lng));
   map.setZoom(14);
@@ -160,7 +162,7 @@ function moveMap(data, map, markers) {
   }
 }
 
-/* Create animation for the marker when its corresponding li is clicked */
+// Create animation for the marker when its corresponding li is clicked 
 function toggleBounce(currentIcon) {
   if (currentIcon.getAnimation() !== null) {
     currentIcon.setAnimation(null);
