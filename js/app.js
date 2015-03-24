@@ -74,8 +74,8 @@ function fetchFoursquare(map, allLocations, markers) {
   
   //ForSquare API request
   var foursquareUrl = 'https://api.foursquare.com/v2/venues/search' +
-  '?client_id=NEVWWB4QNWYIBNRSMMAMPSED3BZTNS3CSTSCHD1LLRR01A2U' +
-  '&client_secret=DZZOB2RCPHICI3YUWZDVW2BPCY3B5AXJMOLPEDY4WZPAPPAL' +
+  '?client_id=4YSOOB5NTUSTDRUFYNURTWA15YSFBGFEPLLKI0NHO41FM0C1' +
+  '&client_secret=1VPU0UDKJSJNFI1UOMCDCXGFXN5JYHGFFRQRTYCS5WYXNMO0' +
   '&ll=' + q.lat +',' + q.lng +
   '&query='+ q.food +
   '&v=20140806' +
