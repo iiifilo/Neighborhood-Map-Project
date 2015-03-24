@@ -8,11 +8,17 @@ If you'll like to check wine in some other neighbordhoods, just enter the desire
 *********************************************************************
 
 Tools:
+
 Knockout framework: http://knockoutjs.com/
+
 Google Maps Javascript API v3: https://developers.google.com/maps/documentation/javascript/
+
 Forsquare API: https://developer.foursquare.com/
+
 Bootstrap framework: https://www.getbootstrap.com
+
 JQuery: https://jquery.com/
+
 Gulp: https://http://gulpjs.com/
 
 **********************************************************************
@@ -20,14 +26,21 @@ Gulp: https://http://gulpjs.com/
 Resources:
 
 All the above tools tutorials and documentation
+
 W3 schools:   https://w3schools.com
+
 Stackoverflow: http://stackoverflow.com/
+
 Udacity Forum
+
 Udacity Chat
 
 ************************************************************************
 
 You should run the app from the build folder or just click on the link @ the beginning of the page.
+
 Udacity Instructors
+
 Udacity Student 
+
 
