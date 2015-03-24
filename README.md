@@ -28,6 +28,9 @@ Udacity Chat
 ************************************************************************
 
 You should run the app from the build folder or just click on the link @ the beginning of the page.
+
 Udacity Instructors
+
 Udacity Student 
+
 
